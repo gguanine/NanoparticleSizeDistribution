@@ -19,7 +19,7 @@ def imageBinary(img:np.ndarray, k_median:int = 5, k_gaussian:int = 11, k_closing
     ret, img_binary = cv.threshold(img_gaussian, 120, 255, cv.THRESH_BINARY_INV + cv.THRESH_OTSU)
     kernal = cv.getStructuringElement(cv.MORPH_ELLIPSE, (k_closing,k_closing))  # kernal for morphological closing
     img_binary = cv.morphologyEx(img_binary, cv.MORPH_CLOSE, kernal, iterations=2)  # morphological closing
-    cv.imwrite(os.path.join(OUTPUT_PATH, "debug.jpg"), img_binary)
+    # cv.imwrite(os.path.join(OUTPUT_PATH, "debug.jpg"), img_binary)
     return img_binary
 
 def findContours(img:np.ndarray, distT_thres=0.5):
@@ -32,7 +32,7 @@ def findContours(img:np.ndarray, distT_thres=0.5):
     img_distT = cv.distanceTransform(img, cv.DIST_L2, 5)
     ret, fontground = cv.threshold(img_distT, img_distT.max()*distT_thres, 255, cv.THRESH_BINARY)
     fontground = np.uint8(fontground)
-    cv.imwrite(os.path.join(OUTPUT_PATH, "debug2.jpg"), fontground)
+    #cv.imwrite(os.path.join(OUTPUT_PATH, "debug2.jpg"), fontground)
 
     # use morphological dilate to determine the sure background (non-particles)
     kernal = cv.getStructuringElement(cv.MORPH_ELLIPSE, (7,7))
@@ -115,7 +115,7 @@ def drawRectangularContours(img:np.ndarray, contours, sigma=2):
         w,h = sorted(list(ret[1]))
         rectangularity = area / (w*h)
         box = cv.boxPoints(ret)
-        box = np.int0(box)
+        box = np.int32(box)
 
         if (area_median / sigma < area < area_median * sigma
             and rectangularity > 0.7
