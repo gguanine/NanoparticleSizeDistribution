@@ -9,17 +9,17 @@
 
 Example 1 circlr mode:
 input
-![alt text](https://github.com/acguanine/ParticlesDetection/blob/master/Samples/img1.jpg)
+![alt text](https://github.com/gguanine/NanoparticleSizeDistribution/blob/master/tests/img1.jpg)
 
 output
-![alt text](https://github.com/acguanine/ParticlesDetection/blob/master/Samples/img1/result.jpg)
+![alt text](https://github.com/gguanine/NanoparticleSizeDistribution/blob/master/tests/img1/result.jpg)
 
 Example 2 rectangle mode:
 input
-![alt text](https://github.com/acguanine/ParticlesDetection/blob/master/Samples/img3.jpg)
+![alt text](https://github.com/gguanine/NanoparticleSizeDistribution/blob/master/tests/img2.jpg)
 
 output
-![alt text](https://github.com/acguanine/ParticlesDetection/blob/master/Samples/img3/result.jpg)
+![alt text](https://github.com/gguanine/NanoparticleSizeDistribution/blob/master/tests/img2/result.jpg)
 
 ## Tips
 
